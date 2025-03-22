@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name= "darkGray">#626262</color><!--fondo gris-->
+    <color name="orange">#FF8C44</color><!--fondo naranja-->
+    <color name="gris_oscuro">#454545</color><!--gris oscuro-->
+    <color name="blue">#1C43C2</color><!--azul-->
+    <color name="gris">#b4b4b4</color><!--gris para los textos de ingreso de texto-->
+</resources>

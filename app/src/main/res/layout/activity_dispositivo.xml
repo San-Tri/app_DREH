@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="16dp"
+    android:background="#666">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Sección Dispositivo en mantenimiento -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:cardCornerRadius="8dp"
+            app:cardBackgroundColor="#444"
+            app:cardElevation="4dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Dispositivo en mantenimiento"
+                    android:textSize="16sp"
+                    android:textColor="#FFA500"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/et_tipo_dispositivo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:minHeight="48dp"
+                    android:hint="@string/hint_tipo"
+                    android:background="@drawable/input_style"
+                    android:padding="10dp"
+                    android:textColor="#FFFFFF"
+                    android:textColorHint="#CCCCCC"
+                    android:layout_marginTop="8dp"/>
+
+                <EditText
+                    android:id="@+id/et_marca"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:minHeight="48dp"
+                    android:hint="@string/hint_marca"
+                    android:background="@drawable/input_style"
+                    android:padding="10dp"
+                    android:textColor="#FFFFFF"
+                    android:textColorHint="#CCCCCC"
+                    android:layout_marginTop="8dp"/>
+
+                <EditText
+                    android:id="@+id/et_modelo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:minHeight="48dp"
+                    android:hint="@string/hint_modelo"
+                    android:background="@drawable/input_style"
+                    android:padding="10dp"
+                    android:textColor="#FFFFFF"
+                    android:textColorHint="#CCCCCC"
+                    android:layout_marginTop="8dp"/>
+
+                <EditText
+                    android:id="@+id/et_codigo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:minHeight="48dp"
+                    android:hint="@string/hint_codigo"
+                    android:background="@drawable/input_style"
+                    android:padding="10dp"
+                    android:textColor="#FFFFFF"
+                    android:textColorHint="#CCCCCC"
+                    android:layout_marginTop="8dp"/>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Botón Guardar -->
+        <Button
+            android:id="@+id/btn_guardar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Guardar"
+            android:textColor="#FFFFFF"
+            android:backgroundTint="#1E90FF"
+            android:layout_marginTop="8dp"/>
+    </LinearLayout>
+</ScrollView>

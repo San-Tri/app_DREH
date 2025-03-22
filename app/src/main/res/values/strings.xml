@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">MiPrimeraApp</string>
+    <string name="hint_dni">Ingrese su DNI</string>
+    <string name="hint_password">Ingrese su contraseña</string>
+    <string name="hint_inicio">Iniciar sesión</string>
+    <string name="hint_titulo">Sistema de Gestión de Mantenimiento\nde Equipos Informáticos</string>
+    <string name="hint_recuperar_ctrñ">¿Olvidaste tu contraseña?</string>
+    <string name="hint_registrarse">¿No tienes una cuenta? Regístrate?</string>
+    <string name="hint_tipo">Tipo de dispositivo</string>
+    <string name="hint_marca">Marca</string>
+    <string name="hint_modelo">Modelo</string>
+    <string name="hint_codigo">Código</string>
+</resources>

@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/darkGray"> <!--estilo general-->
+
+    <!--Encabezado-->
+    <LinearLayout
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="290dp"
+        android:background="@color/orange"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_alignParentTop="true">
+
+        <!--logo-->
+        <ImageView
+            android:layout_width="180dp"
+            android:layout_height="180dp"
+            android:src="@drawable/logo_dre"
+            android:scaleType="centerCrop"/>
+
+        <!--titulo aplicacion-->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/hint_titulo"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:gravity="center"/>
+    </LinearLayout>
+
+    <!--Formulario de inicio de sesion-->
+    <LinearLayout
+        android:id="@+id/formulario"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="20dp"
+        android:orientation="vertical"
+        android:background="@color/gris_oscuro"
+        android:layout_below="@id/header"
+        android:layout_margin="20dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/hint_inicio"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="@android:color/white"
+            android:layout_gravity="center"/>
+
+        <EditText
+            android:id="@+id/et_dni"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="48dp"
+            android:hint="@string/hint_dni"
+            android:textColor="@color/white"
+            android:textColorHint="@color/gris"
+            android:inputType="number"/>
+
+        <EditText
+            android:id="@+id/et_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="48dp"
+            android:hint="@string/hint_password"
+            android:textColor="@android:color/white"
+            android:textColorHint="@color/gris"
+            android:inputType="textPassword"/>
+
+        <Button
+            android:id="@+id/btn_login"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/hint_inicio"
+            android:layout_gravity="center"
+            android:backgroundTint="@color/blue"/>
+    </LinearLayout>
+
+    <!-- Enlaces adicionales -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/hint_recuperar_ctrñ"
+        android:textColor="@android:color/white"
+        android:layout_below="@id/formulario"
+        android:layout_centerHorizontal="true"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/hint_registrarse"
+        android:textColor="@android:color/white"
+        android:layout_below="@id/formulario"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"/>
+
+</RelativeLayout>
