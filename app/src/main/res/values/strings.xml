@@ -6,8 +6,15 @@
     <string name="hint_titulo">Sistema de Gestión de Mantenimiento\nde Equipos Informáticos</string>
     <string name="hint_recuperar_ctrñ">¿Olvidaste tu contraseña?</string>
     <string name="hint_registrarse">¿No tienes una cuenta? Regístrate?</string>
+
+    <!--activity_dispositivo.xml-->
     <string name="hint_tipo">Tipo de dispositivo</string>
     <string name="hint_marca">Marca</string>
     <string name="hint_modelo">Modelo</string>
     <string name="hint_codigo">Código</string>
+    <string name="hint_nombre">Nombre</string>
+    <string name="hint_cargo">Cargo</string>
+    <string name="hint_area">Area</string>
+    <string name="tipo">Tipo</string>
+    <string name="estado">Estado</string>
 </resources>

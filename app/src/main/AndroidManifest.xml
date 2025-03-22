@@ -28,5 +28,13 @@
         <activity android:name=".RegistroActivity" android:exported="true"/>
         <!--ayuda abrir la actividad Dispocitivo-->
         <activity android:name=".DispositivoActivity" />
+        <!--ayuda abrir la actividad ListaDispocitivos-->
+        <activity android:name=".ListaDispositivosActivity" />
+
+
+
     </application>
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+
 </manifest>
