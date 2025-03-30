@@ -30,6 +30,9 @@
         <activity android:name=".DispositivoActivity" />
         <!--ayuda abrir la actividad ListaDispocitivos-->
         <activity android:name=".ListaDispositivosActivity" />
+        <!--ayuda abrir la actividad para editar un elemento-->
+        <activity android:name=".EditarDispositivoActivity" />
+
 
 
 

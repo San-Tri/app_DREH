@@ -4,6 +4,7 @@ import android.content.ContentValues
 import android.content.Context
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
+import android.util.Log
 
 class DatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, null, DATABASE_VERSION) {
 
@@ -87,4 +88,76 @@ class DatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME
         return lista
     }
 
+    // Función para eliminar un dispositivo
+    fun eliminarDispositivo(codigoDispositivo: String): Boolean {
+        val db = writableDatabase
+        val codigoLimpio = codigoDispositivo.trim()
+
+        //Verificar si el código existe antes de eliminar
+        val cursor = db.rawQuery("SELECT * FROM $TABLE_NAME WHERE $COLUMN_CODIGO=?", arrayOf(codigoLimpio))
+        if (cursor.count == 0) {
+            Log.d("DatabaseHelper", "No se encontró el dispositivo con código: $codigoLimpio")
+            cursor.close()
+            db.close()
+            return false
+        }
+        cursor.close()
+
+        //Intentar eliminar
+        val resultado = db.delete(TABLE_NAME, "$COLUMN_CODIGO=?", arrayOf(codigoDispositivo))
+        db.close()
+        return resultado > 0 // Retorna true si eliminó al menos un registro
+    }
+    // Función para editar un dispositivo
+    fun editarDispositivo(
+        codigo: String,
+        tipo: String,
+        marca: String,
+        modelo: String,
+        nombre: String,
+        cargo: String,
+        area: String,
+        tipoMantenimiento: String,
+        estado: String
+    ): Boolean {
+        val db = writableDatabase
+        val values = ContentValues().apply {
+            put(COLUMN_TIPO, tipo)
+            put(COLUMN_MARCA, marca)
+            put(COLUMN_MODELO, modelo)
+            put(COLUMN_NOMBRE, nombre)
+            put(COLUMN_CARGO, cargo)
+            put(COLUMN_AREA, area)
+            put(COLUMN_TIPO_MANTENIMIENTO, tipoMantenimiento)
+            put(COLUMN_ESTADO, estado)
+        }
+
+        val resultado = db.update(TABLE_NAME, values, "$COLUMN_CODIGO=?", arrayOf(codigo))
+        db.close()
+        return resultado > 0 // Retorna true si al menos un registro fue actualizado
+    }
+
+    fun obtenerDispositivoPorCodigo(codigo: String): Dispositivo? {
+        val db = readableDatabase
+        val cursor = db.rawQuery("SELECT * FROM dispositivos WHERE codigo = ?", arrayOf(codigo))
+
+        return if (cursor.moveToFirst()) {
+            val dispositivo = Dispositivo(
+                cursor.getString(cursor.getColumnIndexOrThrow("tipo_dispositivo")),
+                cursor.getString(cursor.getColumnIndexOrThrow("marca")),
+                cursor.getString(cursor.getColumnIndexOrThrow("modelo")),
+                cursor.getString(cursor.getColumnIndexOrThrow("codigo")),
+                cursor.getString(cursor.getColumnIndexOrThrow("nombre_encargado")),
+                cursor.getString(cursor.getColumnIndexOrThrow("cargo")),
+                cursor.getString(cursor.getColumnIndexOrThrow("area")),
+                cursor.getString(cursor.getColumnIndexOrThrow("tipo_mantenimiento")),
+                cursor.getString(cursor.getColumnIndexOrThrow("estado_mantenimiento"))
+            )
+            cursor.close()
+            dispositivo
+        } else {
+            cursor.close()
+            null
+        }
+    }
 }
